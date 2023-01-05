@@ -1,0 +1,3 @@
+const openWeatherForcastJSON= {"coord":{"lon":-74.006,"lat":40.7143},"weather":[{"id":701,"main":"Mist","description":"mist","icon":"50d"}],"base":"stations","main":{"temp":9.61,"feels_like":7.72,"temp_min":7.49,"temp_max":11.18,"pressure":1015,"humidity":94},"visibility":4828,"wind":{"speed":3.6,"deg":40},"clouds":{"all":100},"dt":1672928011,"sys":{"type":2,"id":2008101,"country":"US","sunrise":1672921208,"sunset":1672954928},"timezone":-18000,"id":5128581,"name":"New York","cod":200}
+// const weatherData=JSON.parse(openWeatherForcastJSON)
+// console.log(weatherData)
