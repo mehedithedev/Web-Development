@@ -18,6 +18,15 @@
             })
         }
         
+        async function rainbow(){
+            await backColorChange('red', 1000)
+            console.log('The first promise has been completed in 1000 ms')
+            await backColorChange('orange', 1000)
+            await backColorChange('green', 2000)
+
+
+        }
+        
 
 
     </script>
