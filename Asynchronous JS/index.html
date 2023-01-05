@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const asyncFunction= async ()=>{
+        //     // asyncFunction()
+        //     throw 'Here is an error: 404';
+        //     return "This is a asynchronous function!"
+        // }
+        // asyncFunction().then((data)=>{
+        //     console.log(`The promise is resolved: ${data}`)
+        // }).catch(err=>{
+        //     console.log(`We've got into a problem: 404`)
+        //     console.log(err)
+        // })
+        const loginCredentials= async (username, password)=>{
+            if(!username || !password) throw 'Enter your username and password'
+            if(password==='1234') return `Your credentials are correct, you're good to go!`
+            throw 'Invalid password!'
+        }
+        loginCredentials('Mehedi Hasan', '134')
+        .then(msg => {
+            console.log(`Your promise is been resolved`)
+            console.log(msg)
+        }).catch((err) => {
+            console.log('Your promise is been rejected, try again with correct credentials')
+            console.log(err)
+        });
+
+
+    </script>
+</body>
+</html>
