@@ -10,15 +10,15 @@ app.get('/',(req,res)=>{
     const urlOfOpenWeatherAPI= "https://api.openweathermap.org/data/2.5/weather?q=New York&appid=091407001ef812a094e745e66dde647b&units=metric"
     https.get(urlOfOpenWeatherAPI,(response)=>{
         console.log(response.statusCode)
-        console.log(response)
+        
     //     response.on('data', )
     })
 
 
 })
 
-app.listen(3000,()=>{
-    console.log('listening on',3000)
+app.listen(1000,()=>{
+    console.log('listening on',1000)
 
 })
     
