@@ -1,0 +1,35 @@
+h1{
+    text-align: center;
+    font-size: 30px;
+    color: darkblue;
+}
+form{
+    text-align: center;
+    margin-top: 8rem;
+
+}
+label{
+    font-size: 50px;
+}
+input{
+    font-size: 50px;
+}
+button{
+    font-size: 40px;
+    margin-top: 8rem;
+}
+
+body{
+    background:url('https://images.unsplash.com/photo-1495975832350-f46e82f0ceb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    
+}
+@media (max-width:780px) {
+    form{
+        margin-top: 3rem;
+    }
+}

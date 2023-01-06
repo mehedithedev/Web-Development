@@ -6,7 +6,7 @@ const nodemon= require('nodemon');
 
 const app=express()
 app.use(bodyParser.urlencoded({extended:true}))
-
+app.use(express.static('public'))
 
 
 
@@ -37,15 +37,17 @@ app.post('/', (req,res)=>{
             const iconURL= "http://openweathermap.org/img/wn/"+icon+"@2x.png"
             const humidity=weatherInfo.main.humidity
             const windSpeed=weatherInfo.wind.speed
+            const visibility=weatherInfo.visibility
 
 
             // Outputs the data into the web app
             res.write('<h1> The current temperature in '+nameofCity +' is '+ temperature +' degree celsius</h1>')
             res.write('<h2> The weather condition is: '+ weatherDescription +'</h2>')
-            res.write(`<h3>It feels like ${feelsLike} here in ${nameofCity}</h3>`)
             res.write('<img src='+iconURL+'>')
-            res.write(`<h3>The humidity is: ${humidity}</h3>`)
-            res.write(`<h3>The wind speed is: ${windSpeed} KM/H</h3>`)
+            res.write(`<h2>It feels like ${feelsLike} degree cesius here in ${nameofCity}</h2>`)
+            res.write(`<h2>Visibilit is: ${visibility}</h2>`)
+            res.write(`<h2>The humidity is: ${humidity}%</h2>`)
+            res.write(`<h2>The wind speed is: ${windSpeed} KM/H</h2>`)
 
         })
         // console.log(weatherInfo)
