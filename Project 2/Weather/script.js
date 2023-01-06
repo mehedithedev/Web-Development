@@ -16,9 +16,15 @@ app.get('/', (req,res)=>{
         response.on('data', (data)=>{
             const weatherInfo=JSON.parse(data)
             const temperature= weatherInfo.main.temp
-            console.log(temperature)
+            const weatherDescription=weatherInfo.weather[0].description
+            const feelsLike= weatherInfo.main.feels_like
+            const icon= weatherInfo.weather[0].icon
+            const iconURL= "http://openweathermap.org/img/wn/"+icon+"@2x.png"
+            res.write('<h1> The current temperature in New York is: '+ temperature +'degree celsius</h1>')
+            res.write(`The weather condition is: ${weatherDescription}`)
+            res.write(`It feels like ${feelsLike} here in New York`)
+            res.write('<img src='+iconURL+'>')
 
-            res.send(temperature)
         })
         // console.log(weatherInfo)
         
@@ -27,12 +33,12 @@ app.get('/', (req,res)=>{
 
 
 })
-app.post('/', (req,res)=>{
-    // console.log('The server request is been accepted') 
-    const userCity= req.body.cityName   
-    console.log(userCity)
-// Here is the code to retrive weather information from the OpenWeather API: 
-})
+// app.post('/', (req,res)=>{
+//     // console.log('The server request is been accepted') 
+//     const userCity= req.body.cityName   
+//     console.log(userCity)
+// // Here is the code to retrive weather information from the OpenWeather API: 
+// })
 const port = 3000
 app.listen(port, ()=>{
     console.log(`The port is been started on : ${port}`)
