@@ -49,25 +49,8 @@
     <button class="search-button" id="search-button">Search</button>
     <div class="weather-data" id="weather-data"></div>
   </div>
-  <script>
-    const apiKey = "091407001ef812a094e745e66dde647b";
-
-    const searchButton = document.getElementById("search-button");
-    searchButton.addEventListener("click", () => {
-      const cityInput = document.getElementById("city-input");
-      const city = cityInput.value;
-      cityInput.value = "";
-
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-      fetch(url)
-        .then(response => response.json())
-        .then(data => {
-          const temperature = data["main"]["temp"];
-        //   const temperatureF = temperature * 9/5 - 459.67;  // convert from Kelvin to Fahrenheit
-          const weatherDataElement = document.getElementById("weather-data");
-          weatherDataElement.innerHTML = `The current temperature in ${city} is ${temperature.toFixed(2)}°C`;
-        });
-    });
+  <script src="script.js">
+        
   </script>
 </body>
 </html>
