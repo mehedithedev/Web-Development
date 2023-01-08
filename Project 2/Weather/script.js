@@ -38,6 +38,7 @@ app.post('/', (req,res)=>{
             const humidity=weatherInfo.main.humidity
             const windSpeed=weatherInfo.wind.speed
             const visibility=weatherInfo.visibility
+            
 
 
             // Outputs the data into the web app
@@ -65,7 +66,7 @@ app.post('/', (req,res)=>{
 
 
 
-const port = 3000
+const port= process.env.PORT || 3000
 app.listen(port, ()=>{
     console.log(`The port is been started on : ${port}`)
 })

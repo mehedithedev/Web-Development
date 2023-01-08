@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .weather-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 20px;
+    }
+    .city-input {
+      width: 300px;
+      height: 35px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .search-button {
+      width: 100px;
+      height: 35px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      background-color: #00bfff;
+      color: white;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+    .search-button:hover {
+      background-color: #00ffff;
+    }
+    .weather-data {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="weather-container">
+    <input class="city-input" type="text" id="city-input" placeholder="Enter city name">
+    <button class="search-button" id="search-button">Search</button>
+    <div class="weather-data" id="weather-data"></div>
+  </div>
+  <script>
+    const apiKey = "091407001ef812a094e745e66dde647b";
+
+    const searchButton = document.getElementById("search-button");
+    searchButton.addEventListener("click", () => {
+      const cityInput = document.getElementById("city-input");
+      const city = cityInput.value;
+      cityInput.value = "";
+
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          const temperature = data["main"]["temp"];
+        //   const temperatureF = temperature * 9/5 - 459.67;  // convert from Kelvin to Fahrenheit
+          const weatherDataElement = document.getElementById("weather-data");
+          weatherDataElement.innerHTML = `The current temperature in ${city} is ${temperature.toFixed(2)}°C`;
+        });
+    });
+  </script>
+</body>
+</html>
