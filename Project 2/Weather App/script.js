@@ -14,6 +14,7 @@ searchButton.addEventListener("click", () => {
       const feelsLike = data["main"]["feels_like"];
       const humidity = data["main"]["humidity"];
       const pressure = data["main"]["pressure"];
+      // const windspeed= data['']
 
       // get weather icon and description
       const weather = data["weather"][0];
